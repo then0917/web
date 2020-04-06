@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>konva</title>
+    <script src="js/konva.js"></script>
+    <script src="mian.js"></script>
+</head>
+
+<body>
+    <div id="support-board" style="border: 2px solid green;"></div>
+    <script>
+        var stage = new Konva.Stage({
+            container: 'support-board',
+            width: 600,
+            height: 400,
+        });
+        var layer = new Konva.Layer();
+        // stage.add(layer);
+        var option = {
+            x: 0,
+            y: 0,
+            w: stage.width(),
+            h: stage.height(),
+        };
+        var support_board = new SupportBoard(option);
+        support_board.addToGroupOrLayer(layer);
+        // layer.draw();
+        stage.add(layer);
+        console.log(layer);
+    </script>
+</body>
+
+</html>

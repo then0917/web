@@ -87,8 +87,6 @@ SupportBoard.prototype = {
         this.group.add(this.box2);
         console.log(this.group);
     },
-    //层和组都是虚拟的不能触发事件
-    //y() y(y0)  传参就是设置值 不传就是获取属性
     addToGroupOrLayer: function (layer) {
         layer.add(this.group);
 

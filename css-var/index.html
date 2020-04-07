@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3-var</title>
+    <style>
+        :root{
+           --z: 90px;
+        }
+        .box{
+            --x: 50px;
+            --y:50px;
+            --m-color: #ccc;
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at var(--x) var(--y), lightgreen, green);
+            border: 2px solid var(--m-color);
+        }
+        .class-1{
+            --fontOrangeColor: orange;
+            --fontGreenColor: green;
+            --colorBlack: '#333';
+
+        }
+        .class-head{
+            color: var(--fontGreenColor);
+            font-size: 14px;
+        }
+        .class-body{
+            color: var(--fontOrangeColor);
+            font-size: 12px;
+        }
+        .class-2{
+            color: var(--fontGreenColor);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="class-1">
+        <div class="class-head">this is head</div>
+        <div class="class-body">this is body</div>
+    </div>
+    <div class="class-2">
+        no color
+    </div>
+    <script>
+        let box = document.querySelector('.box');
+        box.onmousemove = function(e){
+            let x = e.pageX -box.offsetLeft;
+            let y = e.pageY -box.offsetTop;
+            box.style.setProperty('--x', `${x}px`);
+            box.style.setProperty('--y', `${y}px`);
+        };
+    </script>
+    
+</body>
+</html>
